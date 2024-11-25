@@ -26,9 +26,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('users') }}"
+                <a href="{{ route('users.index') }}"
                     class="block px-4 py-3 text-gray-800 rounded transition duration-300 my-1
-                            {{ Route::is('users') ? 'bg-indigo-600 text-white shadow-lg' : 'hover:bg-indigo-600 hover:text-white' }}">
+                            {{ Route::is('users.index') ? 'bg-indigo-600 text-white shadow-lg' : 'hover:bg-indigo-600 hover:text-white' }}">
                     <span class="inline-block p-2 rounded-full mr-3">
                         <i class="fas fa-users"></i>
                     </span> Users

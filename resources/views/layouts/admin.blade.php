@@ -21,6 +21,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @livewireStyles
 </head>
 
 <body class="bg-gray-100">
@@ -36,11 +37,12 @@
 
             <!-- Main Dashboard Content -->
             <main class="p-6">
-                @yield('content')
+                {{ $slot }}
             </main>
         </div>
     </div>
 
+    @livewireScripts
 </body>
 
 </html>

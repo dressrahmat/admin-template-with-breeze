@@ -5,7 +5,11 @@
     <h1 class="text-lg font-semibold text-gray-800">Admin Dashboard</h1>
     <div class="flex items-center space-x-4">
         <span class="text-gray-600">Admin</span>
-        <a href="#" class="text-gray-800 hover:text-indigo-600"><i class="fas fa-sign-out-alt"></i>
-            Logout</a>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="text-gray-800 hover:text-indigo-600">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </form>
     </div>
 </header>
