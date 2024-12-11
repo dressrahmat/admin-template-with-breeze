@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Admin\Users\UsersIndex;
+use App\Livewire\Frontend\Home\HomeIndex;
 use App\Http\Controllers\ProfileController;
 use App\Livewire\Admin\Dashboard\DashboardIndex;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', HomeIndex::class);
 
 // Route untuk settings
 Route::get('/settings', function () {
