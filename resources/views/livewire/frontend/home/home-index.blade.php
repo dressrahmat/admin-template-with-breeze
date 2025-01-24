@@ -283,3 +283,31 @@
         </a>
     </div>
 </section>
+
+@script
+    <script>
+        document.addEventListener('livewire:navigated', function() {
+            function initializeFlickity() {
+                const carousels = document.querySelectorAll('.main-carousel');
+                carousels.forEach(carousel => {
+                    if (!carousel.classList.contains('flickity-enabled')) {
+                        new Flickity(carousel, {
+                            cellAlign: 'left',
+                            contain: true,
+                            prevNextButtons: false,
+                            pageDots: false,
+                        });
+                    }
+                });
+            }
+
+            // Inisialisasi awal
+            initializeFlickity();
+
+            // Mengatasi navigasi popstate
+            window.addEventListener('popstate', function() {
+                window.location.reload();
+            });
+        });
+    </script>
+@endscript

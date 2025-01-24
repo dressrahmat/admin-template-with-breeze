@@ -6,9 +6,19 @@ use App\Livewire\Frontend\Home\HomeIndex;
 use App\Http\Controllers\ProfileController;
 use App\Livewire\Admin\Dashboard\DashboardIndex;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+/*
+    ==================================
+    ||   Sensus Santri START  ||
+    ==================================
+*/
+
+/*
+    ==================================
+    ||   Sensus Santri END  ||
+    ==================================
+*/
+
+
 Route::get('/', HomeIndex::class);
 
 // Route untuk settings
