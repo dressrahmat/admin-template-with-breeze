@@ -23,6 +23,7 @@
             z-index: 10;
         }
     </style>
+    @livewireStyles
 </head>
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
@@ -35,6 +36,8 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    @livewireScripts
 </body>
 
 </html>

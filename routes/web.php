@@ -19,9 +19,17 @@ use App\Livewire\Admin\Dashboard\DashboardIndex;
 */
 
 
-Route::get('/', HomeIndex::class);
+Route::get('/', HomeIndex::class)->name('home');
 
-// Route untuk settings
+
+
+
+Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/dashboard', DashboardIndex::class)->name('dashboard');
+    Route::get('/users', UsersIndex::class)->name('users.index');
+
+    // Route untuk settings
 Route::get('/settings', function () {
     return view('welcome');
 })->name('settings');
@@ -36,11 +44,6 @@ Route::get('/analytics', function () {
     return view('welcome');
 })->name('analytics');
 
-
-Route::middleware(['auth', 'verified'])->group(function () {
-
-    Route::get('/dashboard', DashboardIndex::class)->name('dashboard');
-    Route::get('/users', UsersIndex::class)->name('users.index');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
